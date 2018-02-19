@@ -30,7 +30,7 @@ Detach from the "screen" command with control-a followed by control-d
 dot = dotstar.DotStar(board.APA102_SCK, board.APA102_MOSI, 1, brightness=0.2)
 
 
-# Digital input with pullup on D2
+# Digital input with pulldown
 buttonR = DigitalInOut(board.D2)
 buttonR.direction = Direction.INPUT
 buttonR.pull = Pull.DOWN
