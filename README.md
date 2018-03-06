@@ -27,4 +27,17 @@ Now *you’re* trolling *me!*
 
 ![Kerntroller PCB](/images/KernTroller-PCB.jpg)
 
+## The Hardware
+
+The KernTroller hardware was designed with the hope that it's easy to build, and consists of one custom PCB, the Adafruit Trinket M0 dev board, and a couple of buttons. An overview of the hardware and a build guide can be found in the [Hardware](/Hardware) directory of this repo.
+
+
+## The Software
+
+The best part — it's easy to customize how the KernTroller functions by editing a few lines of Python code! The Trinket M0 simply mounts as a drive on your computer, giving you direct access to the code living within. Sample presets and an overview of how the software works can be found in the [Software](/Software) directory of this repo.
+
+## Let me know what you think!
+
+Let me know if you have any questions, or if you made one yourself! I'm also available to give a small workshop on an introduction to electronics and Python by building and programming the KernTroller, [so get in touch!](http://www.andyclymer.com/)
+
 
