@@ -19,18 +19,13 @@ Read the fully commented version here:
 https://github.com/andyclymer/kerntroller
 """
 
-# Calibration Data
-# Replace with actual values from the "Calibrate" script
-minA = 1507
-minB = 1845
-minC = 3219
-
 # Touch sensitivity levels
-lvls = [0.04, 0.25, 0.4]
+lvls = [0.07, 0.31, 0.43]
 
 # LED brightness (0-1)
 lB = 0.05
 
+debug = False
 
 # Callbacks
 
@@ -65,21 +60,20 @@ def cB(v):
 	dot[0] = ((l>2)*128, 85*l, (l>1)*128)
 
 def cMID():
-	# Flip Pair
-	k.press(Keycode.GUI, Keycode.F)
+	# Unassigned
 	print("Mid")
 	dot[0] = (64, 64, 0)
 
 def cL():
-	# Break Exception
-	k.press(Keycode.GUI, Keycode.ALT, Keycode.E)
+	# Show Glyph Stack
+	k.press(Keycode.GUI, Keycode.G)
 	print("L")
 	led.value = 1
 	# cmd-E
 
 def cR():
-	# Make Exception
-	k.press(Keycode.GUI, Keycode.E)
+	# Flip Pair
+	k.press(Keycode.GUI, Keycode.F)
 	print("R")
 	led.value = 1
 	
@@ -111,12 +105,43 @@ tC = touchio.TouchIn(board.D1)
 led = DigitalInOut(board.D13)
 led.direction = Direction.OUTPUT
 
+def calibrate():
+	sTime = time.monotonic()
+	rA = [4094, 0]
+	rB = [4094, 0]
+	rC = [4094, 0]
+	t = 4
+	while sTime+t>=time.monotonic():
+		led.value = 1
+		if time.monotonic()-sTime>1:
+			f = time.monotonic()%0.1 > 0.05
+			led.value = not f
+			dot[0] = (f*255,0,0)
+			vA = tA.raw_value
+			if vA<rA[0]: rA[0]=vA
+			elif vA>rA[1]: rA[1]=vA
+			vB = tB.raw_value
+			if vB<rB[0]: rB[0]=vB
+			elif vB>rB[1]: rB[1]=vB
+			vC = tC.raw_value
+			if vC<rC[0]: rC[0]=vC
+			elif vC>rC[1]: rC[1]=vC
+	mA = rA[0]+(rA[1]-rA[0])*6
+	mB = rB[0]+(rB[1]-rB[0])*6
+	mC = rC[0]+(rC[1]-rC[0])*6
+	led.value = 0
+	dot[0] = (0,255,0)
+	time.sleep(0.25)
+	dot[0] = (0,0,0)
+	print(mA,mB,mC)
+	return mA,mB,mC
+minA, minB, minC = calibrate()
+
 def vl(m, *l):
 	return [m+((4096-m)*i) for i in l]
 tAl = vl(minA, *lvls)
 tBl = vl(minB, *lvls)
-tCl = vl(minC, 0.3)[0]
-
+tCl = vl(minC, 0.4)[0]
 
 prev = dict(A=0, B=0, C=0, L=0, R=0)
 prevT = time.monotonic()
@@ -157,6 +182,8 @@ while True:
 				elif st["B"]: cUP()
 			elif st["A"] and not st["B"]: cA(tAh)
 			elif st["B"] and not st["A"]: cB(tBh)
+			if st["L"] and st["R"]:
+				minA, minB, minC = calibrate()
 			elif st["L"]: cL()
 			elif st["R"]: cR()
 	elif bDwn:
