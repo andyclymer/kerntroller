@@ -25,8 +25,6 @@ lvls = [0.07, 0.31, 0.43]
 # LED brightness (0-1)
 lB = 0.05
 
-debug = False
-
 # Callbacks
 
 def cUP():

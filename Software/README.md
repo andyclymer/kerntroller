@@ -18,4 +18,4 @@ A simple debug script to print bar graphs of the touch sensor and button status 
 
 The default setup, ready to control Metrics Machine.
 
-Have a look at the comments to see how it all works, but you're free to edit the code to adjust the sensitivity of the touch pads, and to configure different keystrokes of the virtual keyboard with each button press.
+Have a look at the comments to see how it all works, but you're free to edit the code to adjust the sensitivity of the touch pads, and to configure different keystrokes of the virtual keyboard with each button press.x
