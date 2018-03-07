@@ -1,6 +1,6 @@
 # KernTroller Software
 
-When you connect the KernTroller (or rather the Adafruit Trinket M0) to your computer you'll find that it mounts as a small ``CIRCUITPY`` drive. It's set to run the ``main.py`` that it finds at the root level of its file system at startup, so all of your code editing will start with this file. I've included a few preset Python scripts that you can drop in and start using.
+When you connect the KernTroller (or rather the Adafruit Trinket M0) to your computer you'll find that it mounts as a small ``CIRCUITPY`` drive. Each time the Trinket M0 is powered up or restarted it will run the ``main.py`` that it finds at the root level of its file system, so all of your code editing will start with this file. I've included a few preset Python scripts that you can drop in and start using.
 
 The Trinket M0 is a full 32-bit computer, but resources are scarce! With only 256k of storage, after embedding a slimmed down Python standard library there isn't much room left for your own code. 
 
