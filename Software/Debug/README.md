@@ -40,4 +40,4 @@ If it did work, you should see an output of the current state of the buttons on 
 
 Notice that even when you're not pressing on a touch pad it always has some reading, often even at 50%! Because of this, if you're going to write a script that needs to know the zero value for the touch sensors it's important to take a quick calibration reading of the default touch pad values. For an example, have a look at how the "MetricsMachineControl".
 
-To exit the "screen", type ``control-a`` and then ''control-d`` to "detach" from the screen.
+To exit the "screen", type ``control-a`` and then ``control-d`` to "detach" from the screen.
