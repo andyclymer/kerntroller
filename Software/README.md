@@ -9,6 +9,21 @@ In my examples you'll find that in an effort to eke out as much code as possible
 So, alongside each Python script that you would install on the device, I'll sometimes also include another version that's functinoally the same but includes all of the comments you need to know how it all works.
 
 
+## Start by updating CircuitPython
+
+If you're building KernTroller yourself, before you get too far you will most likely need to update the version of CircuitPython that comes on the Trinket M0.
+
+To update CircuitPython, you can follow [the updating instructions provided by Adafruit](https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython), or follow my summary here —
+
+* Go to the [latest release page on the CircuitPython repository](https://github.com/adafruit/circuitpython/releases/latest)
+* Locate and download the build for the Trinket M0, its file name will look something like:
+  * ``adafruit-circuitpython-trinket_m0-?.?.?.uf2``
+* Connect the Trinket to your computer with a USB cable, if it wasn't already.
+* On the Trinket you'll find a small "Reset" button, tap this button twice to make it reboot into the bootloader.
+* A new "TRINKETBOOT" drive will mount on your desktop — simply copy the file you downloaded in a previous step onto this drive to install.
+* The Trinket will reboot once again, this time with the latest version of CircuitPython.
+
+
 ## Debug
 
 A simple debug script to print bar graphs of the touch sensor and button status to the terminal to make sure that everything is working once you've finished the build.
