@@ -34,7 +34,7 @@ It's also worth noting that the solder joints on the back of the KernTroller wou
 - Optional: *Little plastic widget* to keep you from touching the pins on the back of the device
 
 ## Where to buy
-- **KernTroller PCBs:** I'm currently checking for interest on a cheaper run of the second revision of the PCBs, so let me know if you would like to build one! In the mean time, KernTroller "v1" PCBs can be purchased in shareable packs of three [directly from the PCB manufacturer OSH Park](https://oshpark.com/shared_projects/DCge5Fbd) at a cost of $19.95 for the set of three. OSH Park doesn't keep any stock of products, when you place an order they will manfacture and directly ship you the boards and the manufacturing will take about two weeks.
+- **KernTroller PCBs:** I'm currently checking for interest on a cheaper run of the second revision of the PCBs, so let me know if you would like to build one! 
 - **Adafruit Trinket M0:** Adafruit make a few variations of the Trinket, the most important thing is to purchase the black “Trinket M0” and not the blue “Trinket 5V” or “Trinket 3.3V”! Only the black “M0” variant can work with Python.
   * In the United States, the Trinket M0 can be [purchased from Adafruit](https://www.adafruit.com/product/3500) for about $9 each or for a little bit more [on Amazon](https://www.amazon.com/Adafruit-Trinket-M0-CircuitPython-Arduino/dp/B01MR2S7K0/),
   * In the Netherlands it can be [purchased from  Floris](https://www.floris.cc/shop/en/home/1947-adafruit-trinket-m0-for-use-with-circuitpython-arduino-ide.html) or from [Kiwi Electronics](https://www.kiwi-electronics.nl/arduino-trinket-m0) for about €10,
