@@ -67,6 +67,8 @@ After clipping all of the pins, it might be nice to touch the soldering iron bri
 
 *Important step:* Clean off all of your solder joints with isopropyl alcohol (“rubbing alcohol”) even if you were using "no-clean solder" — the residue is still toxic and should be cleaned off since the circuit board isn't going to live within an enclosure. Don't skip this step!
 
-Finally, if you have the “small laser cut plastic widget”, affix it to the back of the board to cover the touch contacts. If you aren't able to obtain this piece, at least cover the contacts with a bit of electrical tape to keep them from shorting if they touch a metal surface.
+If you have the “small laser cut plastic widget”, affix it to the back of the board to cover the touch contacts. If you aren't able to obtain this piece, at least cover the contacts with a bit of electrical tape to keep them from shorting if they touch a metal surface.
+
+Final step, before loading any software on the KernTroller, make sure that it has the latest version of CircuitPython installed (many of them will come with a slightly out of date version). It's quick and easy to update, have a look at the instructions in the [Software](/Software) section.
 
 
