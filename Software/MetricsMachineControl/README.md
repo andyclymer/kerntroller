@@ -16,7 +16,7 @@ To help you unerstand how the code works, I've also included a ``main-commented.
 
 ## Start up calibration
 
-When you plug in the board, or when the board restarts after you've saved a code update, you'll notice a steady red light, and then two seconds of flsahing red lights. During the time that the lights are flashing, the code is taking a quick calibration test of the touch pads to figure out what the zero point is, so just keep your fingers off the touch pads! If you need to recalibrate, just unplug and replug the device.
+When you plug in the board, or when the board restarts after you've saved a code update, you'll notice a steady red light, and then two seconds of flashing red lights. During the time that the lights are flashing, the code is making a quick test of the touch pads to figure out what the zero point is, so don’t touch! If you need to recalibrate, just unplug and replug the device.
 
 ![Calibration](/images/calibration.gif)
 
