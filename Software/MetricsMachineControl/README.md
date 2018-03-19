@@ -18,6 +18,8 @@ To help you unerstand how the code works, I've also included a ``main-commented.
 
 When you plug in the board, or when the board restarts after you've saved a code update, you'll notice a steady red light, and then two seconds of flsahing red lights. During the time that the lights are flashing, the code is taking a quick calibration test of the touch pads to figure out what the zero point is, so just keep your fingers off the touch pads! If you need to recalibrate, just unplug and replug the device.
 
+![Calibration](/images/calibration.gif)
+
 ## How it works
 
 The ``main-commented.py`` tells the full story, but generally speaking the code makes the KernTroller identify itself to your computer as if it was as keyboard, and each button on the KernTroller has its own "callback" function  (``cUp()``, ``cDown()``, etc.) toward the top of the script that fires off a keyboard command and sets the "dot" LED on the board to a color of your choosing.
