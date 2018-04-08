@@ -116,17 +116,21 @@ k = Keyboard()
 kL = KeyboardLayoutUS(k)
 
 # The "Right" physical button, or "bR", is wired up so that pressing down will
-# make an electrical connection from pin D2 on the board to the 3.3v power connection.
+# make an electrical connection from pin D2 on the board to the ground power connection.
 # For this to work, set the pin D2 to be an Input, with an internal resistor pulling
-# the pin down to the ground.
+# the pin "up" away from the ground.
 bR = DigitalInOut(board.D2)
 bR.direction = Direction.INPUT
-bR.pull = Pull.DOWN
+bR.pull = Pull.UP 
+#   Note! If you have a "v1" board from RoboThon, you will need to pull the pin DOWN instead.
+#   There was a small electrical change that was made to the board after this first version.
 
 # Same for the "Left" physical button, "bL", but this time on pin D0.
 bL = DigitalInOut(board.D0)
 bL.direction = Direction.INPUT
-bL.pull = Pull.DOWN
+bL.pull = Pull.UP
+#   Note! If you have a "v1" board from RoboThon, you will need to pull the pin DOWN instead.
+#   There was a small electrical change that was made to the board after this first version.
 
 # Initialize three touch pins
 tA = touchio.TouchIn(board.D3)
@@ -245,8 +249,10 @@ while True:
 	st["B"] = tBv >= tBl[0]
 	st["C"] = (tCv >= tCl)
 	# ...and record if the L and R physical buttons are active too.
-	st["L"]  = bL.value
-	st["R"]  = bR.value
+    #   Note! If you have a "v1" board from RoboThon, remove the "not" from the next two statements,
+    #   you'll want to record the exact value and not the opposite.
+	st["L"]  = not bL.value
+	st["R"]  = not bR.value
 	
 	# A shortcut to see if *any* button is down, take the sum of the values.
 	# The values in the dictionary will be 0 if False and 1 if True

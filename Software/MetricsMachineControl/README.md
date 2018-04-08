@@ -6,6 +6,8 @@
 
 Replace the ``main.py`` file on the KernTroller with the one found in this directory.
 
+Note: If you have a “v1” board from RoboThon 2018, the wiring on your board is slightly different that newer boards and you will want to install the ``main-v1.py`` instead. Before installing, just rename the file to ``main.py``.
+
 ## Comments? Variable names?
 
 File size is incredibly limited on the Trinket M0! To leave enough room for you to hack around with the the Python code and add more libraries, I tried to keep the text of the code as small as possible.

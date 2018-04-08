@@ -33,11 +33,11 @@ dot = dotstar.DotStar(board.APA102_SCK, board.APA102_MOSI, 1, brightness=0.2)
 # Digital input with pulldown
 buttonR = DigitalInOut(board.D2)
 buttonR.direction = Direction.INPUT
-buttonR.pull = Pull.UP
+buttonR.pull = Pull.DOWN
 
 buttonL = DigitalInOut(board.D0)
 buttonL.direction = Direction.INPUT
-buttonL.pull = Pull.UP
+buttonL.pull = Pull.DOWN
 
 # Capacitive touch on D3
 touchA = touchio.TouchIn(board.D3)
@@ -57,10 +57,10 @@ while True:
     tCs = "@" * tCv
     tCs += "-" * (20 - tCv)
     # L/R button
-    if not buttonL.value:
+    if buttonL.value:
         lv = "LLL"
     else: lv = ".l."
-    if not buttonR.value:
+    if buttonR.value:
         rv = "RRR"
     else: rv = ".r."
     print("A", tAs, "B", tBs, "C", tCs, lv, rv)

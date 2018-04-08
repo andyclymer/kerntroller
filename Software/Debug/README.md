@@ -6,6 +6,8 @@ The debug script prints out a simple bar graph of the touch sensor and button st
 
 Replace the ``main.py`` file on the KernTroller with the one found in this directory.
 
+Note: If you have a “v1” board from RoboThon 2018, the wiring on your board is slightly different that newer boards and you will want to install the ``main-v1.py`` instead. Before installing, just rename the file to ``main.py``.
+
 ## How to use
 
 The Python script is executed entirely on the Trinket M0 attached to the KernTroller, you can open up a Terminal "screen" to remotely connect to the device to look in on any Python tracebacks as they happen, or any standard output that would come from a ``print()`` statement.

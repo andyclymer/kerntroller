@@ -90,11 +90,11 @@ kL = KeyboardLayoutUS(k)
 
 bR = DigitalInOut(board.D2)
 bR.direction = Direction.INPUT
-bR.pull = Pull.UP
+bR.pull = Pull.DOWN
 
 bL = DigitalInOut(board.D0)
 bL.direction = Direction.INPUT
-bL.pull = Pull.UP
+bL.pull = Pull.DOWN
 
 tA = touchio.TouchIn(board.D3)
 tB = touchio.TouchIn(board.D4)
@@ -159,8 +159,8 @@ while True:
 	st["B"] = tBv >= tBl[0]
 	st["C"] = (tCv >= tCl)
 	
-	st["L"]  = not bL.value
-	st["R"]  = not bR.value
+	st["L"]  = bL.value
+	st["R"]  = bR.value
 	
 	bDwn = sum(st.values())
 	if not bDwn:
